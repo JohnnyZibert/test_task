@@ -72,7 +72,7 @@ export const StatsPage = () => {
                 console.log(event, "event");
                 return (
                   <Checkbox
-                    value={eventType[event].checkedStatus}
+                    value={eventType[event]?.checkedStatus}
                     onChange={(e) =>
                       handleChangeCheckbox(event, e.target.checked)
                     }

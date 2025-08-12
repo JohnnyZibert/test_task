@@ -3,11 +3,6 @@ export const eventTypeOptions: Record<
   { checkedStatus: boolean; label: string; key: string }
 > = {
   sendSms: { checkedStatus: false, label: "Отправка СМС", key: "sendSms" },
-  sendRequest: {
-    checkedStatus: false,
-    label: "Отправка запроса МТС RIM",
-    key: "sendRequest",
-  },
 };
 
 interface Item {
