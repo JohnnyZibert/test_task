@@ -18,7 +18,7 @@ export const HeaderApp = () => {
         <Text className={styles.role}>Директор</Text>
       </div>
       <img
-        src={images.avatar}
+        src={images.logo}
         className={styles.avatar}
         alt="фото пользователя"
       />
