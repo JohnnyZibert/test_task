@@ -1,0 +1,41 @@
+.container {
+  margin-top: 80px;
+}
+
+.cardContainer {
+  display: flex;
+  width: 100%;
+  background-color: var(--white);
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  padding: 10px 15px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.filterWrapper {
+  width: 100%;
+  display: flex;
+  align-items: end;
+  gap: 50px;
+  flex-direction: row;
+}
+
+.button {
+  background-color: var(--color-success-300);
+  color: var(--white);
+}
+
+.filterType {
+  display: flex;
+  flex-direction: column;
+}
+
+.tableWrapper {
+  background-color: var(--white);
+}
+
+.table {
+  width: 100%;
+  margin-top: 30px;
+}

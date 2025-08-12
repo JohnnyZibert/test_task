@@ -1,0 +1,30 @@
+.container {
+  border-radius: 8px;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.divider {
+  margin: 0;
+}
+
+.filterWrapper {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.checkbox {
+  margin-top: 8px;
+}
+
+.title {
+  margin: 0 !important;
+}
+
+.filterByStatus {
+  display: flex;
+  flex-direction: column;
+}

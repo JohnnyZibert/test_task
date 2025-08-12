@@ -1,0 +1,49 @@
+.container {
+  margin-top: 80px;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.cardContainer {
+  display: flex;
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 10px 15px;
+  align-items: center;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.selectWrapper {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+.search {
+  width: 100%;
+}
+
+.button {
+  background-color: var(--color-success-300);
+  color: var(--white);
+}
+
+.clearBtn {
+  color: var(--color-neutral-400);
+  border: 1px solid var(--color-neutral-400);
+
+  &:hover {
+    background-color: var(--color-neutral-300) !important;
+  }
+}

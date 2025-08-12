@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  position: sticky;
+  min-height: 60px;
+  top: 100px;
+  left: 0;
+  z-index: 12;
+  box-shadow: 0 4px 24px #22292f1a;
+}
+
+.title {
+  margin: 0 !important;
+}
