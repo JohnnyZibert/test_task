@@ -1,15 +1,7 @@
 import styles from "./StatsPage.module.scss";
-import {
-  Button,
-  Checkbox,
-  CheckboxChangeEvent,
-  Space,
-  Table,
-  Typography,
-} from "antd";
+import { Button, Checkbox, Space, Table, Typography } from "antd";
 import { SubHeader } from "../../shared/ui/SubHeader/SubHeader";
 import { useState } from "react";
-import { PatientInfoForm } from "../../features/PatientForm/PatientInfoForm";
 import { Link } from "@tanstack/react-router";
 import { routesPath } from "../../shared/constants/constants";
 import { DownloadOutlined } from "@ant-design/icons";
@@ -34,6 +26,8 @@ export const StatsPage = () => {
   >([null, null]);
   const [eventType, setEventType] = useState<EventType>({
     sendSms: { checkedStatus: false, label: "Отправка СМС", key: "sendSms" },
+    telegram: { checkedStatus: false, label: "Telegram", key: "telegram" },
+    max: { checkedStatus: false, label: "Max", key: "max" },
   });
 
   const handleClearFilters = () => {
@@ -69,7 +63,6 @@ export const StatsPage = () => {
             <Text>Тип события</Text>
             <Space wrap>
               {Object.keys(eventTypeOptions)?.map((event) => {
-                console.log(event, "event");
                 return (
                   <Checkbox
                     value={eventType[event]?.checkedStatus}

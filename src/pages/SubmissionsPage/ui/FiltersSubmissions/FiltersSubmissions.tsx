@@ -74,7 +74,7 @@ export const FiltersPanel = ({
               dateRange={dateRange}
             />
             <div className={styles.filterByStatus}>
-              <Text>По статусу</Text>
+              <Text className={styles.text}>По статусу</Text>
               <Space wrap>
                 {statusOptions.map((status) => (
                   <Checkbox

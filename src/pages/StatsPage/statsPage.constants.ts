@@ -3,6 +3,8 @@ export const eventTypeOptions: Record<
   { checkedStatus: boolean; label: string; key: string }
 > = {
   sendSms: { checkedStatus: false, label: "Отправка СМС", key: "sendSms" },
+  telegram: { checkedStatus: false, label: "Telegram", key: "telegram" },
+  max: { checkedStatus: false, label: "Max", key: "max" },
 };
 
 interface Item {
