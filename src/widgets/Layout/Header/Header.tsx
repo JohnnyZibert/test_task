@@ -1,7 +1,6 @@
 import { Button, Layout, Typography } from "antd";
 
 import styles from "./Header.module.scss";
-import { images } from "../../../shared/assets";
 import { LogoutOutlined } from "@ant-design/icons";
 
 const { Header } = Layout;
