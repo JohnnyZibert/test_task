@@ -34,11 +34,6 @@ export const StatsPage = () => {
   >([null, null]);
   const [eventType, setEventType] = useState<EventType>({
     sendSms: { checkedStatus: false, label: "Отправка СМС", key: "sendSms" },
-    sendRequest: {
-      checkedStatus: false,
-      label: "Отправка запроса МТС RIM",
-      key: "sendRequest",
-    },
   });
 
   const handleClearFilters = () => {
