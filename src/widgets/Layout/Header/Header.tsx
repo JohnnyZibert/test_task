@@ -17,11 +17,11 @@ export const HeaderApp = () => {
         </Text>
         <Text className={styles.role}>Директор</Text>
       </div>
-      <img
-        src={images.logo}
-        className={styles.avatar}
-        alt="фото пользователя"
-      />
+      {/*<img*/}
+      {/*  src={images.logo}*/}
+      {/*  className={styles.avatar}*/}
+      {/*  alt="фото пользователя"*/}
+      {/*/>*/}
       <Button className={styles.logoutBtn}>
         <LogoutOutlined className={styles.logout} />
       </Button>
