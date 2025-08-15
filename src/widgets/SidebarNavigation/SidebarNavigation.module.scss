@@ -1,5 +1,11 @@
-.menuItem {
-  &:focus {
+.active {
+  background-color: var(--color-success-100);
+
+  svg {
     color: var(--white) !important;
   }
+}
+
+.activeLink {
+  color: var(--white) !important;
 }

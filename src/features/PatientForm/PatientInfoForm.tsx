@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Card, Col, DatePicker, Form, Input, Row, Select } from "antd";
 import { Dayjs } from "dayjs";
 import styles from "./PatientInfoForm.module.scss";
-import { useFormStore } from "./patientInfoForm.store";
+import { useFormStore } from "./model/patientInfoForm.store";
 
 const { Option } = Select;
 

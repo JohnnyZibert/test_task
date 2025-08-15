@@ -2,12 +2,17 @@ import { Button, Layout, Typography } from "antd";
 
 import styles from "./Header.module.scss";
 import { LogoutOutlined } from "@ant-design/icons";
+import { useNavigate } from "@tanstack/react-router";
 
 const { Header } = Layout;
 
 const { Text } = Typography;
 
 export const HeaderApp = () => {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    navigate({ to: "/login" });
+  };
   return (
     <Header className={styles.header}>
       <div className={styles.userInfo}>
@@ -16,12 +21,7 @@ export const HeaderApp = () => {
         </Text>
         <Text className={styles.role}>Директор</Text>
       </div>
-      {/*<img*/}
-      {/*  src={images.logo}*/}
-      {/*  className={styles.avatar}*/}
-      {/*  alt="фото пользователя"*/}
-      {/*/>*/}
-      <Button className={styles.logoutBtn}>
+      <Button onClick={handleLogout} className={styles.logoutBtn}>
         <LogoutOutlined className={styles.logout} />
       </Button>
     </Header>

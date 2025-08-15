@@ -21,3 +21,5 @@ export const overrideStyleButton = {
 };
 
 export const PAGE_SIZE = 5;
+
+export const optionsSearch = [{ value: "externalId", label: "Внешний ID" }];

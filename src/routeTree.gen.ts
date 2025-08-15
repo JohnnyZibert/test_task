@@ -9,29 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SignatureServiceRouteImport } from './routes/signature-service'
-import { Route as SignEdoRouteImport } from './routes/sign-edo'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LoginIndexRouteImport } from './routes/login/index'
 import { Route as ManagerStatsRouteImport } from './routes/manager/stats'
 import { Route as ManagerLogsRouteImport } from './routes/manager/logs'
-import { Route as ManagerDocumentsRouteImport } from './routes/manager/documents'
 import { Route as ManagerAddRouteImport } from './routes/manager/add'
 import { Route as ManagerUsersIndexRouteImport } from './routes/manager/users/index'
+import { Route as ManagerDocumentsIndexRouteImport } from './routes/manager/documents/index'
 import { Route as ManagerUsersAddRouteImport } from './routes/manager/users/add'
+import { Route as ManagerDocumentsAddRouteImport } from './routes/manager/documents/add'
+import { Route as ManagerDocumentsChar91idChar93IndexRouteImport } from './routes/manager/documents/[id]/index'
+import { Route as ManagerDocumentsDocumentsIdRouteImport } from './routes/manager/documents/documents.$id'
 
-const SignatureServiceRoute = SignatureServiceRouteImport.update({
-  id: '/signature-service',
-  path: '/signature-service',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SignEdoRoute = SignEdoRouteImport.update({
-  id: '/sign-edo',
-  path: '/sign-edo',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginIndexRoute = LoginIndexRouteImport.update({
+  id: '/login/',
+  path: '/login/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ManagerStatsRoute = ManagerStatsRouteImport.update({
@@ -44,11 +41,6 @@ const ManagerLogsRoute = ManagerLogsRouteImport.update({
   path: '/manager/logs',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ManagerDocumentsRoute = ManagerDocumentsRouteImport.update({
-  id: '/manager/documents',
-  path: '/manager/documents',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ManagerAddRoute = ManagerAddRouteImport.update({
   id: '/manager/add',
   path: '/manager/add',
@@ -59,115 +51,144 @@ const ManagerUsersIndexRoute = ManagerUsersIndexRouteImport.update({
   path: '/manager/users/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ManagerDocumentsIndexRoute = ManagerDocumentsIndexRouteImport.update({
+  id: '/manager/documents/',
+  path: '/manager/documents/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ManagerUsersAddRoute = ManagerUsersAddRouteImport.update({
   id: '/manager/users/add',
   path: '/manager/users/add',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ManagerDocumentsAddRoute = ManagerDocumentsAddRouteImport.update({
+  id: '/manager/documents/add',
+  path: '/manager/documents/add',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ManagerDocumentsChar91idChar93IndexRoute =
+  ManagerDocumentsChar91idChar93IndexRouteImport.update({
+    id: '/manager/documents/[id]/',
+    path: '/manager/documents/[id]/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ManagerDocumentsDocumentsIdRoute =
+  ManagerDocumentsDocumentsIdRouteImport.update({
+    id: '/manager/documents/documents/$id',
+    path: '/manager/documents/documents/$id',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/sign-edo': typeof SignEdoRoute
-  '/signature-service': typeof SignatureServiceRoute
   '/manager/add': typeof ManagerAddRoute
-  '/manager/documents': typeof ManagerDocumentsRoute
   '/manager/logs': typeof ManagerLogsRoute
   '/manager/stats': typeof ManagerStatsRoute
+  '/login': typeof LoginIndexRoute
+  '/manager/documents/add': typeof ManagerDocumentsAddRoute
   '/manager/users/add': typeof ManagerUsersAddRoute
+  '/manager/documents': typeof ManagerDocumentsIndexRoute
   '/manager/users': typeof ManagerUsersIndexRoute
+  '/manager/documents/documents/$id': typeof ManagerDocumentsDocumentsIdRoute
+  '/manager/documents/[id]': typeof ManagerDocumentsChar91idChar93IndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/sign-edo': typeof SignEdoRoute
-  '/signature-service': typeof SignatureServiceRoute
   '/manager/add': typeof ManagerAddRoute
-  '/manager/documents': typeof ManagerDocumentsRoute
   '/manager/logs': typeof ManagerLogsRoute
   '/manager/stats': typeof ManagerStatsRoute
+  '/login': typeof LoginIndexRoute
+  '/manager/documents/add': typeof ManagerDocumentsAddRoute
   '/manager/users/add': typeof ManagerUsersAddRoute
+  '/manager/documents': typeof ManagerDocumentsIndexRoute
   '/manager/users': typeof ManagerUsersIndexRoute
+  '/manager/documents/documents/$id': typeof ManagerDocumentsDocumentsIdRoute
+  '/manager/documents/[id]': typeof ManagerDocumentsChar91idChar93IndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/sign-edo': typeof SignEdoRoute
-  '/signature-service': typeof SignatureServiceRoute
   '/manager/add': typeof ManagerAddRoute
-  '/manager/documents': typeof ManagerDocumentsRoute
   '/manager/logs': typeof ManagerLogsRoute
   '/manager/stats': typeof ManagerStatsRoute
+  '/login/': typeof LoginIndexRoute
+  '/manager/documents/add': typeof ManagerDocumentsAddRoute
   '/manager/users/add': typeof ManagerUsersAddRoute
+  '/manager/documents/': typeof ManagerDocumentsIndexRoute
   '/manager/users/': typeof ManagerUsersIndexRoute
+  '/manager/documents/documents/$id': typeof ManagerDocumentsDocumentsIdRoute
+  '/manager/documents/[id]/': typeof ManagerDocumentsChar91idChar93IndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/sign-edo'
-    | '/signature-service'
     | '/manager/add'
-    | '/manager/documents'
     | '/manager/logs'
     | '/manager/stats'
+    | '/login'
+    | '/manager/documents/add'
     | '/manager/users/add'
+    | '/manager/documents'
     | '/manager/users'
+    | '/manager/documents/documents/$id'
+    | '/manager/documents/[id]'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/sign-edo'
-    | '/signature-service'
     | '/manager/add'
-    | '/manager/documents'
     | '/manager/logs'
     | '/manager/stats'
+    | '/login'
+    | '/manager/documents/add'
     | '/manager/users/add'
+    | '/manager/documents'
     | '/manager/users'
+    | '/manager/documents/documents/$id'
+    | '/manager/documents/[id]'
   id:
     | '__root__'
     | '/'
-    | '/sign-edo'
-    | '/signature-service'
     | '/manager/add'
-    | '/manager/documents'
     | '/manager/logs'
     | '/manager/stats'
+    | '/login/'
+    | '/manager/documents/add'
     | '/manager/users/add'
+    | '/manager/documents/'
     | '/manager/users/'
+    | '/manager/documents/documents/$id'
+    | '/manager/documents/[id]/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  SignEdoRoute: typeof SignEdoRoute
-  SignatureServiceRoute: typeof SignatureServiceRoute
   ManagerAddRoute: typeof ManagerAddRoute
-  ManagerDocumentsRoute: typeof ManagerDocumentsRoute
   ManagerLogsRoute: typeof ManagerLogsRoute
   ManagerStatsRoute: typeof ManagerStatsRoute
+  LoginIndexRoute: typeof LoginIndexRoute
+  ManagerDocumentsAddRoute: typeof ManagerDocumentsAddRoute
   ManagerUsersAddRoute: typeof ManagerUsersAddRoute
+  ManagerDocumentsIndexRoute: typeof ManagerDocumentsIndexRoute
   ManagerUsersIndexRoute: typeof ManagerUsersIndexRoute
+  ManagerDocumentsDocumentsIdRoute: typeof ManagerDocumentsDocumentsIdRoute
+  ManagerDocumentsChar91idChar93IndexRoute: typeof ManagerDocumentsChar91idChar93IndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/signature-service': {
-      id: '/signature-service'
-      path: '/signature-service'
-      fullPath: '/signature-service'
-      preLoaderRoute: typeof SignatureServiceRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sign-edo': {
-      id: '/sign-edo'
-      path: '/sign-edo'
-      fullPath: '/sign-edo'
-      preLoaderRoute: typeof SignEdoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login/': {
+      id: '/login/'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/manager/stats': {
@@ -184,13 +205,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManagerLogsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/manager/documents': {
-      id: '/manager/documents'
-      path: '/manager/documents'
-      fullPath: '/manager/documents'
-      preLoaderRoute: typeof ManagerDocumentsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/manager/add': {
       id: '/manager/add'
       path: '/manager/add'
@@ -205,6 +219,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManagerUsersIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/manager/documents/': {
+      id: '/manager/documents/'
+      path: '/manager/documents'
+      fullPath: '/manager/documents'
+      preLoaderRoute: typeof ManagerDocumentsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/manager/users/add': {
       id: '/manager/users/add'
       path: '/manager/users/add'
@@ -212,19 +233,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManagerUsersAddRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/manager/documents/add': {
+      id: '/manager/documents/add'
+      path: '/manager/documents/add'
+      fullPath: '/manager/documents/add'
+      preLoaderRoute: typeof ManagerDocumentsAddRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/manager/documents/[id]/': {
+      id: '/manager/documents/[id]/'
+      path: '/manager/documents/[id]'
+      fullPath: '/manager/documents/[id]'
+      preLoaderRoute: typeof ManagerDocumentsChar91idChar93IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/manager/documents/documents/$id': {
+      id: '/manager/documents/documents/$id'
+      path: '/manager/documents/documents/$id'
+      fullPath: '/manager/documents/documents/$id'
+      preLoaderRoute: typeof ManagerDocumentsDocumentsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  SignEdoRoute: SignEdoRoute,
-  SignatureServiceRoute: SignatureServiceRoute,
   ManagerAddRoute: ManagerAddRoute,
-  ManagerDocumentsRoute: ManagerDocumentsRoute,
   ManagerLogsRoute: ManagerLogsRoute,
   ManagerStatsRoute: ManagerStatsRoute,
+  LoginIndexRoute: LoginIndexRoute,
+  ManagerDocumentsAddRoute: ManagerDocumentsAddRoute,
   ManagerUsersAddRoute: ManagerUsersAddRoute,
+  ManagerDocumentsIndexRoute: ManagerDocumentsIndexRoute,
   ManagerUsersIndexRoute: ManagerUsersIndexRoute,
+  ManagerDocumentsDocumentsIdRoute: ManagerDocumentsDocumentsIdRoute,
+  ManagerDocumentsChar91idChar93IndexRoute:
+    ManagerDocumentsChar91idChar93IndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

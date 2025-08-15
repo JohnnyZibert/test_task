@@ -1,0 +1,34 @@
+.tableWrapper {
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.deleteBtn {
+  background-color: var(--color-error-400) !important;
+  border: none !important;
+  color: var(--white) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details {
+  white-space: pre-line; /* для переноса строк внутри ячейки */
+}
+
+.link {
+  color: #3f51b5;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+
+  button {
+    background-color: var(--color-success-300);
+    color: var(--white);
+  }
+}

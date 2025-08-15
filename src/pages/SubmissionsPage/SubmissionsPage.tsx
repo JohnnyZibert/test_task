@@ -16,6 +16,7 @@ import dayjs from "dayjs";
 import { PAGE_SIZE } from "../../shared/constants/constants";
 import { statuses } from "../../entyties/Submissons/DocumentCard/documentCard.constants";
 import { SubHeader } from "../../shared/ui/SubHeader/SubHeader";
+import { Link } from "@tanstack/react-router";
 
 const { Text } = Typography;
 
@@ -102,7 +103,9 @@ export const SubmissionsPage = () => {
         title="Отправления"
         renderProp={() => (
           <div className={styles.buttons}>
-            <Button>+ Добавить отправление</Button>
+            <Link to={"/manager/documents/add"}>
+              <Button>+ Добавить отправление</Button>
+            </Link>
             <Dropdown
               menu={{ items }}
               trigger={["click"]}

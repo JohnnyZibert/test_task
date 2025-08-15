@@ -1,14 +1,12 @@
 import styles from "./PatientsPage.module.scss";
-import { Button, Card, Input, Select, Space, Typography } from "antd";
+import { Button, Input, Select, Typography } from "antd";
 import { SubHeader } from "../../shared/ui/SubHeader/SubHeader";
 import { useState } from "react";
 import { PatientInfoForm } from "../../features/PatientForm/PatientInfoForm";
 import { Link } from "@tanstack/react-router";
-import { routesPath } from "../../shared/constants/constants";
+import { optionsSearch, routesPath } from "../../shared/constants/constants";
 
 const { Text } = Typography;
-
-const options = [{ value: "externalId", label: "Внешний ID" }];
 
 export const PatientsPage = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -38,11 +36,10 @@ export const PatientsPage = () => {
             <Text>Поиск по</Text>
             <Select
               defaultValue="externalId"
-              options={options}
+              options={optionsSearch}
               value={selectedValue}
               className={styles.select}
               onChange={(value) => handleOnChangeSelect(value)}
-              suffixIcon={null} // если хочешь убрать иконку
             />
           </div>
           <div className={styles.search}>
