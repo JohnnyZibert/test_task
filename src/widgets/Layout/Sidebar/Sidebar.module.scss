@@ -2,6 +2,11 @@
   box-shadow: 0 0 15px #22292f0d;
   background: var(--white);
   display: flex;
+  min-width: 200px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
 }
 
 .logo {

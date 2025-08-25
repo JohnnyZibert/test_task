@@ -114,7 +114,7 @@ export const Signed = () => {
       <Modal
         title={
           <Title level={4} className={styles.title}>
-            Поиск клиента
+            Поиск пациента
           </Title>
         }
         open={isOpenPopup}

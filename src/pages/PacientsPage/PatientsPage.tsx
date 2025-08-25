@@ -23,7 +23,7 @@ export const PatientsPage = () => {
   return (
     <div className={styles.container}>
       <SubHeader
-        title="Клиенты"
+        title="Пациенты"
         renderProp={() => (
           <Link to={routesPath.ADD_NEW_PATIENT}>
             <Button className={styles.button}>+ Добавить</Button>

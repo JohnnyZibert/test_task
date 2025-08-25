@@ -16,7 +16,7 @@ export const AddNewPatientPage = () => {
   return (
     <div className={styles.container}>
       <SubHeader
-        title="Новый клиет"
+        title="Новый пациент"
         renderProp={() => (
           <div className={styles.buttons}>
             <Button

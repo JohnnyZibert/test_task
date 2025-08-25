@@ -18,7 +18,7 @@ import { Route as ManagerUsersIndexRouteImport } from './routes/manager/users/in
 import { Route as ManagerDocumentsIndexRouteImport } from './routes/manager/documents/index'
 import { Route as ManagerUsersAddRouteImport } from './routes/manager/users/add'
 import { Route as ManagerDocumentsAddRouteImport } from './routes/manager/documents/add'
-import { Route as ManagerDocumentsChar91idChar93IndexRouteImport } from './routes/manager/documents/[id]/index'
+import { Route as ManagerDocumentIdRouteImport } from './routes/manager/document.$id'
 import { Route as ManagerDocumentsDocumentsIdRouteImport } from './routes/manager/documents/documents.$id'
 
 const IndexRoute = IndexRouteImport.update({
@@ -66,12 +66,11 @@ const ManagerDocumentsAddRoute = ManagerDocumentsAddRouteImport.update({
   path: '/manager/documents/add',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ManagerDocumentsChar91idChar93IndexRoute =
-  ManagerDocumentsChar91idChar93IndexRouteImport.update({
-    id: '/manager/documents/[id]/',
-    path: '/manager/documents/[id]/',
-    getParentRoute: () => rootRouteImport,
-  } as any)
+const ManagerDocumentIdRoute = ManagerDocumentIdRouteImport.update({
+  id: '/manager/document/$id',
+  path: '/manager/document/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ManagerDocumentsDocumentsIdRoute =
   ManagerDocumentsDocumentsIdRouteImport.update({
     id: '/manager/documents/documents/$id',
@@ -85,12 +84,12 @@ export interface FileRoutesByFullPath {
   '/manager/logs': typeof ManagerLogsRoute
   '/manager/stats': typeof ManagerStatsRoute
   '/login': typeof LoginIndexRoute
+  '/manager/document/$id': typeof ManagerDocumentIdRoute
   '/manager/documents/add': typeof ManagerDocumentsAddRoute
   '/manager/users/add': typeof ManagerUsersAddRoute
   '/manager/documents': typeof ManagerDocumentsIndexRoute
   '/manager/users': typeof ManagerUsersIndexRoute
   '/manager/documents/documents/$id': typeof ManagerDocumentsDocumentsIdRoute
-  '/manager/documents/[id]': typeof ManagerDocumentsChar91idChar93IndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -98,12 +97,12 @@ export interface FileRoutesByTo {
   '/manager/logs': typeof ManagerLogsRoute
   '/manager/stats': typeof ManagerStatsRoute
   '/login': typeof LoginIndexRoute
+  '/manager/document/$id': typeof ManagerDocumentIdRoute
   '/manager/documents/add': typeof ManagerDocumentsAddRoute
   '/manager/users/add': typeof ManagerUsersAddRoute
   '/manager/documents': typeof ManagerDocumentsIndexRoute
   '/manager/users': typeof ManagerUsersIndexRoute
   '/manager/documents/documents/$id': typeof ManagerDocumentsDocumentsIdRoute
-  '/manager/documents/[id]': typeof ManagerDocumentsChar91idChar93IndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -112,12 +111,12 @@ export interface FileRoutesById {
   '/manager/logs': typeof ManagerLogsRoute
   '/manager/stats': typeof ManagerStatsRoute
   '/login/': typeof LoginIndexRoute
+  '/manager/document/$id': typeof ManagerDocumentIdRoute
   '/manager/documents/add': typeof ManagerDocumentsAddRoute
   '/manager/users/add': typeof ManagerUsersAddRoute
   '/manager/documents/': typeof ManagerDocumentsIndexRoute
   '/manager/users/': typeof ManagerUsersIndexRoute
   '/manager/documents/documents/$id': typeof ManagerDocumentsDocumentsIdRoute
-  '/manager/documents/[id]/': typeof ManagerDocumentsChar91idChar93IndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -127,12 +126,12 @@ export interface FileRouteTypes {
     | '/manager/logs'
     | '/manager/stats'
     | '/login'
+    | '/manager/document/$id'
     | '/manager/documents/add'
     | '/manager/users/add'
     | '/manager/documents'
     | '/manager/users'
     | '/manager/documents/documents/$id'
-    | '/manager/documents/[id]'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -140,12 +139,12 @@ export interface FileRouteTypes {
     | '/manager/logs'
     | '/manager/stats'
     | '/login'
+    | '/manager/document/$id'
     | '/manager/documents/add'
     | '/manager/users/add'
     | '/manager/documents'
     | '/manager/users'
     | '/manager/documents/documents/$id'
-    | '/manager/documents/[id]'
   id:
     | '__root__'
     | '/'
@@ -153,12 +152,12 @@ export interface FileRouteTypes {
     | '/manager/logs'
     | '/manager/stats'
     | '/login/'
+    | '/manager/document/$id'
     | '/manager/documents/add'
     | '/manager/users/add'
     | '/manager/documents/'
     | '/manager/users/'
     | '/manager/documents/documents/$id'
-    | '/manager/documents/[id]/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -167,12 +166,12 @@ export interface RootRouteChildren {
   ManagerLogsRoute: typeof ManagerLogsRoute
   ManagerStatsRoute: typeof ManagerStatsRoute
   LoginIndexRoute: typeof LoginIndexRoute
+  ManagerDocumentIdRoute: typeof ManagerDocumentIdRoute
   ManagerDocumentsAddRoute: typeof ManagerDocumentsAddRoute
   ManagerUsersAddRoute: typeof ManagerUsersAddRoute
   ManagerDocumentsIndexRoute: typeof ManagerDocumentsIndexRoute
   ManagerUsersIndexRoute: typeof ManagerUsersIndexRoute
   ManagerDocumentsDocumentsIdRoute: typeof ManagerDocumentsDocumentsIdRoute
-  ManagerDocumentsChar91idChar93IndexRoute: typeof ManagerDocumentsChar91idChar93IndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -240,11 +239,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManagerDocumentsAddRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/manager/documents/[id]/': {
-      id: '/manager/documents/[id]/'
-      path: '/manager/documents/[id]'
-      fullPath: '/manager/documents/[id]'
-      preLoaderRoute: typeof ManagerDocumentsChar91idChar93IndexRouteImport
+    '/manager/document/$id': {
+      id: '/manager/document/$id'
+      path: '/manager/document/$id'
+      fullPath: '/manager/document/$id'
+      preLoaderRoute: typeof ManagerDocumentIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/manager/documents/documents/$id': {
@@ -263,13 +262,12 @@ const rootRouteChildren: RootRouteChildren = {
   ManagerLogsRoute: ManagerLogsRoute,
   ManagerStatsRoute: ManagerStatsRoute,
   LoginIndexRoute: LoginIndexRoute,
+  ManagerDocumentIdRoute: ManagerDocumentIdRoute,
   ManagerDocumentsAddRoute: ManagerDocumentsAddRoute,
   ManagerUsersAddRoute: ManagerUsersAddRoute,
   ManagerDocumentsIndexRoute: ManagerDocumentsIndexRoute,
   ManagerUsersIndexRoute: ManagerUsersIndexRoute,
   ManagerDocumentsDocumentsIdRoute: ManagerDocumentsDocumentsIdRoute,
-  ManagerDocumentsChar91idChar93IndexRoute:
-    ManagerDocumentsChar91idChar93IndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

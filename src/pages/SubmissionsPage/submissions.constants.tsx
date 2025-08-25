@@ -99,54 +99,6 @@ export const items: MenuProps["items"] = [
   },
 ];
 
-export const itemsDocumentSettings: MenuProps["items"] = [
-  {
-    key: "view",
-    label: (
-      <div className={styles.menuItem}>
-        <EyeOutlined />
-        <span>Посмотреть</span>
-      </div>
-    ),
-  },
-  {
-    key: "submission",
-    label: (
-      <div className={styles.menuItem}>
-        <ShareAltOutlined />
-        <span>Отправить повторно ссылку на подпись</span>
-      </div>
-    ),
-  },
-  {
-    key: "downloadPDF",
-    label: (
-      <div className={styles.menuItem}>
-        <DownloadOutlined />
-        <span>Скачать PDF</span>
-      </div>
-    ),
-  },
-  {
-    key: "print",
-    label: (
-      <div className={styles.menuItem}>
-        <PrinterOutlined />
-        <span>Печать</span>
-      </div>
-    ),
-  },
-  {
-    key: "downloadReport",
-    label: (
-      <div className={styles.menuItem}>
-        <FileDoneOutlined />
-        <span>Скачать отчёт</span>
-      </div>
-    ),
-  },
-];
-
 export const submissionsData: Document[] = [
   {
     created_at: "31.07.2025 16:10:17",

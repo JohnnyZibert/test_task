@@ -4,6 +4,7 @@
   min-height: 100vh;
   display: flex;
   gap: 30px;
+  position: relative;
 }
 
 .contentWrapper {
@@ -13,4 +14,5 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
+  margin-left: 200px;
 }

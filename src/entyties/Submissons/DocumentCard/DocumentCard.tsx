@@ -7,12 +7,20 @@ import {
   Typography,
   Button,
   Dropdown,
+  MenuProps,
 } from "antd";
 import { Document } from "../../../pages/SubmissionsPage/submissions.types";
 import styles from "./DocumentCard.module.scss";
 import { statuses } from "./documentCard.constants";
-import { SettingOutlined } from "@ant-design/icons";
-import { itemsDocumentSettings } from "../../../pages/SubmissionsPage/submissions.constants";
+import {
+  DownloadOutlined,
+  EyeOutlined,
+  FileDoneOutlined,
+  PrinterOutlined,
+  SettingOutlined,
+  ShareAltOutlined,
+} from "@ant-design/icons";
+import { useNavigate } from "@tanstack/react-router";
 
 const { Text, Paragraph } = Typography;
 
@@ -23,6 +31,7 @@ interface Props {
 }
 
 export const DocumentCard = (props: Props) => {
+  const navigate = useNavigate();
   const {
     name,
     created_at,
@@ -32,6 +41,58 @@ export const DocumentCard = (props: Props) => {
     document_user_keys,
     id,
   } = props.document;
+
+  const handleOnView = () => {
+    navigate({ to: `/manager/document/${id}` });
+  };
+  const itemsDocumentSettings: MenuProps["items"] = [
+    {
+      key: "view",
+      label: (
+        <div className={styles.menuItem}>
+          <EyeOutlined />
+          <span>Посмотреть</span>
+        </div>
+      ),
+      onClick: handleOnView,
+    },
+    {
+      key: "submission",
+      label: (
+        <div className={styles.menuItem}>
+          <ShareAltOutlined />
+          <span>Отправить повторно ссылку на подпись</span>
+        </div>
+      ),
+    },
+    {
+      key: "downloadPDF",
+      label: (
+        <div className={styles.menuItem}>
+          <DownloadOutlined />
+          <span>Скачать PDF</span>
+        </div>
+      ),
+    },
+    {
+      key: "print",
+      label: (
+        <div className={styles.menuItem}>
+          <PrinterOutlined />
+          <span>Печать</span>
+        </div>
+      ),
+    },
+    {
+      key: "downloadReport",
+      label: (
+        <div className={styles.menuItem}>
+          <FileDoneOutlined />
+          <span>Скачать отчёт</span>
+        </div>
+      ),
+    },
+  ];
 
   return (
     <Card className={styles.cardContainer}>
