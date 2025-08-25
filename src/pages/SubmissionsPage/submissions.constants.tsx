@@ -3,15 +3,10 @@ import { MenuProps } from "antd";
 import styles from "./SubmissionsPage.module.scss";
 import {
   CloudDownloadOutlined,
-  DownloadOutlined,
-  EyeOutlined,
   FileAddOutlined,
   FileTextOutlined,
   InboxOutlined,
   SendOutlined,
-  ShareAltOutlined,
-  PrinterOutlined,
-  FileDoneOutlined,
 } from "@ant-design/icons";
 
 export const items: MenuProps["items"] = [
