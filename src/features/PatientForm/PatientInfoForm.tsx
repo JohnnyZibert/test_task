@@ -3,6 +3,7 @@ import { Card, Col, DatePicker, Form, Input, Row, Select } from "antd";
 import { Dayjs } from "dayjs";
 import styles from "./PatientInfoForm.module.scss";
 import { useFormStore } from "./model/patientInfoForm.store";
+import { Link } from "@tanstack/react-router";
 
 const { Option } = Select;
 
@@ -141,6 +142,9 @@ export const PatientInfoForm: FC = () => {
           </Col>
         </Row>
       </Card>
+      <Link to={"/manager/documents"} className={styles.link} type="link">
+        Отправления
+      </Link>
     </Form>
   );
 };

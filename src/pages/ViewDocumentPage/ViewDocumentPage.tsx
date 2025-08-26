@@ -15,6 +15,7 @@ import { settingsMenuItems } from "../../entyties/LogsTable/logsTable.constants"
 import { statuses } from "../../entyties/Submissons/DocumentCard/documentCard.constants";
 import { useParams } from "@tanstack/react-router";
 import { submissionsData } from "../SubmissionsPage/submissions.constants";
+import { PdfViewer } from "../../widgets/PDFviewer/PdfViewer.tsx";
 
 const { Text, Paragraph } = Typography;
 
@@ -174,6 +175,7 @@ export const ViewDocumentPage = () => {
           </Row>
         </Col>
       </Card>
+      <PdfViewer />
     </div>
   );
 };

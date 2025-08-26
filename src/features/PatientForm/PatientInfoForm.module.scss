@@ -33,3 +33,19 @@
 .select {
   height: 40px;
 }
+
+.link {
+  padding: 6px 8px;
+  background-color: var(--color-success-300);
+  max-width: 120px;
+  color: var(--white);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    color: var(--white);
+    background-color: var(--color-success-400);
+  }
+}
