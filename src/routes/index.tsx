@@ -4,7 +4,7 @@ export const Route = createFileRoute("/")({
   component: () => <></>,
   beforeLoad: () => {
     throw redirect({
-      to: "/manager/documents",
+      to: "/users/user/add",
     });
   },
 });

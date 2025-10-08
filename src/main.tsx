@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.scss";
 import "./fonts.scss";
+import "antd/dist/reset.css";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
 import { QueryClientProvider } from "./shared/config/providers/QueryClientProvider";

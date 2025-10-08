@@ -1,0 +1,78 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 15px;
+
+  @media (max-width: 768px) {
+    margin-top: 40px;
+  }
+}
+
+.card {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: none;
+
+  :global(.ant-card-head) {
+    border-bottom: none;
+    padding: 0 24px;
+    font-size: 16px;
+    color: var(--color-neutral-475);
+  }
+
+  :global(.ant-form-item-label > label) {
+    font-size: 14px;
+    color: var(--color-neutral-475);
+  }
+
+  :global(.ant-input),
+  :global(.ant-select-selector),
+  :global(.ant-picker) {
+    border-radius: 6px;
+    height: 40px;
+  }
+}
+
+.formRow {
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.row {
+  width: 50%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.select {
+  height: 40px;
+}
+
+.rowButtons {
+  display: flex;
+  justify-content: flex-end;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+}
+
+.actionButtons {
+  display: flex;
+  gap: 20px;
+}
+
+.saveUser {
+  color: var(--white);
+  background: var(--color-success-100);
+
+  &:hover {
+    background: var(--color-success-200) !important;
+    color: var(--white) !important;
+  }
+}

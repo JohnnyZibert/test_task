@@ -1,10 +1,3 @@
-export const routesPath = {
-  SIGN_PDN: "/",
-  DOCUMENT: "/document",
-  ADD_NEW_PATIENT: "/manager/users/add",
-  SIGNATURE_SERVICE: "/signature-service",
-};
-
 export const overrideStyleMenu = {
   itemColor: "#625f6e",
   itemHoverColor: "#625f6e", // текст при ховере
@@ -19,7 +12,3 @@ export const overrideStyleButton = {
   colorTextLightSolid: "#ffffff", // цвет иконок/текста внутри кнопки
   lineWidth: 0, // убираем рамку (по желанию)
 };
-
-export const PAGE_SIZE = 5;
-
-export const optionsSearch = [{ value: "externalId", label: "Внешний ID" }];

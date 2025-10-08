@@ -1,0 +1,19 @@
+.table {
+  width: 100%;
+  margin-top: 10px;
+  min-width: 700px;
+
+  @media (max-width: 768px) {
+    overflow-x: auto;
+  }
+}
+
+.tableWrapper {
+  width: 100%;
+  height: fit-content;
+  overflow-x: auto; // 👈 горизонтальная прокрутка
+
+  @media (max-width: 768px) {
+    max-height: 75vh;
+  }
+}

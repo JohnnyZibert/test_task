@@ -1,69 +1,52 @@
-# React + TypeScript + Vite
+# 🧩 Test Task — React + Vite + TanStack + Ant Design
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📋 Описание проекта
 
-Currently, two official plugins are available:
+Проект представляет собой интерфейс для **управления пользователями**.  
+Реализована таблица со списком пользователей, в которой можно:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 👀 Создавать нового пользователя
+- 👀 Просматривать данные пользователей
+- 🗑️ Удалять пользователя
+- ✏️ Переходить к форме редактирования
 
-## Expanding the ESLint configuration
+**Также реализован адаптив страниц под мобильное разрешение.**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## ⚙️ Используемые технологии
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Основные библиотеки и инструменты проекта:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- ⚛️ **React 18** — основа интерфейса
+- ⚡ **Vite** — сборка и разработка
+- 🧩 **TypeScript** — строгая типизация
+- 🎨 **Ant Design 5** — UI-компоненты
+- 🧭 **@tanstack/react-router** — маршрутизация
+- 🔄 **@tanstack/react-query** — работа с API и кэширование данных
+- 🌐 **Axios** — HTTP-запросы
+- 🔣 **qs** — парсинг query-параметров
+- 🧱 **classnames** — удобное управление классами
+- 💅 **Sass (SCSS)** — стилизация и модули
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🧱 Структура проекта
+- **src/**
+- ├── **shared/** - Общие компоненты, API и утилиты
+- ├── **features/** - Функциональные модули (например, форма пользователя)
+- ├── **pages/** - Страницы приложения
+- ├── **styles/** - Глобальные стили
+- ├── **main.tsx** - Точка входа
+- └── **router/** - Конфигурация маршрутов TanStack Router
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🚀 Запуск проекта
+
+Перед запуском убедитесь, что у вас установлен **Node.js версии 18 или выше**.
+
+### Выполните команду
+**yarn dev**
+**npm run dev**
+
+Приложение будет доступно по адресу:
+👉 http://localhost:5173

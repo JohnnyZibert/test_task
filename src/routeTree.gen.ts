@@ -10,168 +10,63 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as LoginIndexRouteImport } from './routes/login/index'
-import { Route as ManagerStatsRouteImport } from './routes/manager/stats'
-import { Route as ManagerLogsRouteImport } from './routes/manager/logs'
-import { Route as ManagerAddRouteImport } from './routes/manager/add'
-import { Route as ManagerUsersIndexRouteImport } from './routes/manager/users/index'
-import { Route as ManagerDocumentsIndexRouteImport } from './routes/manager/documents/index'
-import { Route as ManagerUsersAddRouteImport } from './routes/manager/users/add'
-import { Route as ManagerDocumentsAddRouteImport } from './routes/manager/documents/add'
-import { Route as ManagerDocumentIdRouteImport } from './routes/manager/document.$id'
-import { Route as ManagerDocumentsDocumentsIdRouteImport } from './routes/manager/documents/documents.$id'
+import { Route as UsersIndexRouteImport } from './routes/users/index'
+import { Route as UsersEditUserIdRouteImport } from './routes/users/edit/$userId'
+import { Route as UsersUserAddIndexRouteImport } from './routes/users/user/add/index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LoginIndexRoute = LoginIndexRouteImport.update({
-  id: '/login/',
-  path: '/login/',
+const UsersIndexRoute = UsersIndexRouteImport.update({
+  id: '/users/',
+  path: '/users/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ManagerStatsRoute = ManagerStatsRouteImport.update({
-  id: '/manager/stats',
-  path: '/manager/stats',
+const UsersEditUserIdRoute = UsersEditUserIdRouteImport.update({
+  id: '/users/edit/$userId',
+  path: '/users/edit/$userId',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ManagerLogsRoute = ManagerLogsRouteImport.update({
-  id: '/manager/logs',
-  path: '/manager/logs',
+const UsersUserAddIndexRoute = UsersUserAddIndexRouteImport.update({
+  id: '/users/user/add/',
+  path: '/users/user/add/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ManagerAddRoute = ManagerAddRouteImport.update({
-  id: '/manager/add',
-  path: '/manager/add',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ManagerUsersIndexRoute = ManagerUsersIndexRouteImport.update({
-  id: '/manager/users/',
-  path: '/manager/users/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ManagerDocumentsIndexRoute = ManagerDocumentsIndexRouteImport.update({
-  id: '/manager/documents/',
-  path: '/manager/documents/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ManagerUsersAddRoute = ManagerUsersAddRouteImport.update({
-  id: '/manager/users/add',
-  path: '/manager/users/add',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ManagerDocumentsAddRoute = ManagerDocumentsAddRouteImport.update({
-  id: '/manager/documents/add',
-  path: '/manager/documents/add',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ManagerDocumentIdRoute = ManagerDocumentIdRouteImport.update({
-  id: '/manager/document/$id',
-  path: '/manager/document/$id',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ManagerDocumentsDocumentsIdRoute =
-  ManagerDocumentsDocumentsIdRouteImport.update({
-    id: '/manager/documents/documents/$id',
-    path: '/manager/documents/documents/$id',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/manager/add': typeof ManagerAddRoute
-  '/manager/logs': typeof ManagerLogsRoute
-  '/manager/stats': typeof ManagerStatsRoute
-  '/login': typeof LoginIndexRoute
-  '/manager/document/$id': typeof ManagerDocumentIdRoute
-  '/manager/documents/add': typeof ManagerDocumentsAddRoute
-  '/manager/users/add': typeof ManagerUsersAddRoute
-  '/manager/documents': typeof ManagerDocumentsIndexRoute
-  '/manager/users': typeof ManagerUsersIndexRoute
-  '/manager/documents/documents/$id': typeof ManagerDocumentsDocumentsIdRoute
+  '/users': typeof UsersIndexRoute
+  '/users/edit/$userId': typeof UsersEditUserIdRoute
+  '/users/user/add': typeof UsersUserAddIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/manager/add': typeof ManagerAddRoute
-  '/manager/logs': typeof ManagerLogsRoute
-  '/manager/stats': typeof ManagerStatsRoute
-  '/login': typeof LoginIndexRoute
-  '/manager/document/$id': typeof ManagerDocumentIdRoute
-  '/manager/documents/add': typeof ManagerDocumentsAddRoute
-  '/manager/users/add': typeof ManagerUsersAddRoute
-  '/manager/documents': typeof ManagerDocumentsIndexRoute
-  '/manager/users': typeof ManagerUsersIndexRoute
-  '/manager/documents/documents/$id': typeof ManagerDocumentsDocumentsIdRoute
+  '/users': typeof UsersIndexRoute
+  '/users/edit/$userId': typeof UsersEditUserIdRoute
+  '/users/user/add': typeof UsersUserAddIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/manager/add': typeof ManagerAddRoute
-  '/manager/logs': typeof ManagerLogsRoute
-  '/manager/stats': typeof ManagerStatsRoute
-  '/login/': typeof LoginIndexRoute
-  '/manager/document/$id': typeof ManagerDocumentIdRoute
-  '/manager/documents/add': typeof ManagerDocumentsAddRoute
-  '/manager/users/add': typeof ManagerUsersAddRoute
-  '/manager/documents/': typeof ManagerDocumentsIndexRoute
-  '/manager/users/': typeof ManagerUsersIndexRoute
-  '/manager/documents/documents/$id': typeof ManagerDocumentsDocumentsIdRoute
+  '/users/': typeof UsersIndexRoute
+  '/users/edit/$userId': typeof UsersEditUserIdRoute
+  '/users/user/add/': typeof UsersUserAddIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/manager/add'
-    | '/manager/logs'
-    | '/manager/stats'
-    | '/login'
-    | '/manager/document/$id'
-    | '/manager/documents/add'
-    | '/manager/users/add'
-    | '/manager/documents'
-    | '/manager/users'
-    | '/manager/documents/documents/$id'
+  fullPaths: '/' | '/users' | '/users/edit/$userId' | '/users/user/add'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/manager/add'
-    | '/manager/logs'
-    | '/manager/stats'
-    | '/login'
-    | '/manager/document/$id'
-    | '/manager/documents/add'
-    | '/manager/users/add'
-    | '/manager/documents'
-    | '/manager/users'
-    | '/manager/documents/documents/$id'
-  id:
-    | '__root__'
-    | '/'
-    | '/manager/add'
-    | '/manager/logs'
-    | '/manager/stats'
-    | '/login/'
-    | '/manager/document/$id'
-    | '/manager/documents/add'
-    | '/manager/users/add'
-    | '/manager/documents/'
-    | '/manager/users/'
-    | '/manager/documents/documents/$id'
+  to: '/' | '/users' | '/users/edit/$userId' | '/users/user/add'
+  id: '__root__' | '/' | '/users/' | '/users/edit/$userId' | '/users/user/add/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ManagerAddRoute: typeof ManagerAddRoute
-  ManagerLogsRoute: typeof ManagerLogsRoute
-  ManagerStatsRoute: typeof ManagerStatsRoute
-  LoginIndexRoute: typeof LoginIndexRoute
-  ManagerDocumentIdRoute: typeof ManagerDocumentIdRoute
-  ManagerDocumentsAddRoute: typeof ManagerDocumentsAddRoute
-  ManagerUsersAddRoute: typeof ManagerUsersAddRoute
-  ManagerDocumentsIndexRoute: typeof ManagerDocumentsIndexRoute
-  ManagerUsersIndexRoute: typeof ManagerUsersIndexRoute
-  ManagerDocumentsDocumentsIdRoute: typeof ManagerDocumentsDocumentsIdRoute
+  UsersIndexRoute: typeof UsersIndexRoute
+  UsersEditUserIdRoute: typeof UsersEditUserIdRoute
+  UsersUserAddIndexRoute: typeof UsersUserAddIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -183,74 +78,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/login/': {
-      id: '/login/'
-      path: '/login'
-      fullPath: '/login'
-      preLoaderRoute: typeof LoginIndexRouteImport
+    '/users/': {
+      id: '/users/'
+      path: '/users'
+      fullPath: '/users'
+      preLoaderRoute: typeof UsersIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/manager/stats': {
-      id: '/manager/stats'
-      path: '/manager/stats'
-      fullPath: '/manager/stats'
-      preLoaderRoute: typeof ManagerStatsRouteImport
+    '/users/edit/$userId': {
+      id: '/users/edit/$userId'
+      path: '/users/edit/$userId'
+      fullPath: '/users/edit/$userId'
+      preLoaderRoute: typeof UsersEditUserIdRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/manager/logs': {
-      id: '/manager/logs'
-      path: '/manager/logs'
-      fullPath: '/manager/logs'
-      preLoaderRoute: typeof ManagerLogsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/manager/add': {
-      id: '/manager/add'
-      path: '/manager/add'
-      fullPath: '/manager/add'
-      preLoaderRoute: typeof ManagerAddRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/manager/users/': {
-      id: '/manager/users/'
-      path: '/manager/users'
-      fullPath: '/manager/users'
-      preLoaderRoute: typeof ManagerUsersIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/manager/documents/': {
-      id: '/manager/documents/'
-      path: '/manager/documents'
-      fullPath: '/manager/documents'
-      preLoaderRoute: typeof ManagerDocumentsIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/manager/users/add': {
-      id: '/manager/users/add'
-      path: '/manager/users/add'
-      fullPath: '/manager/users/add'
-      preLoaderRoute: typeof ManagerUsersAddRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/manager/documents/add': {
-      id: '/manager/documents/add'
-      path: '/manager/documents/add'
-      fullPath: '/manager/documents/add'
-      preLoaderRoute: typeof ManagerDocumentsAddRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/manager/document/$id': {
-      id: '/manager/document/$id'
-      path: '/manager/document/$id'
-      fullPath: '/manager/document/$id'
-      preLoaderRoute: typeof ManagerDocumentIdRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/manager/documents/documents/$id': {
-      id: '/manager/documents/documents/$id'
-      path: '/manager/documents/documents/$id'
-      fullPath: '/manager/documents/documents/$id'
-      preLoaderRoute: typeof ManagerDocumentsDocumentsIdRouteImport
+    '/users/user/add/': {
+      id: '/users/user/add/'
+      path: '/users/user/add'
+      fullPath: '/users/user/add'
+      preLoaderRoute: typeof UsersUserAddIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -258,16 +104,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ManagerAddRoute: ManagerAddRoute,
-  ManagerLogsRoute: ManagerLogsRoute,
-  ManagerStatsRoute: ManagerStatsRoute,
-  LoginIndexRoute: LoginIndexRoute,
-  ManagerDocumentIdRoute: ManagerDocumentIdRoute,
-  ManagerDocumentsAddRoute: ManagerDocumentsAddRoute,
-  ManagerUsersAddRoute: ManagerUsersAddRoute,
-  ManagerDocumentsIndexRoute: ManagerDocumentsIndexRoute,
-  ManagerUsersIndexRoute: ManagerUsersIndexRoute,
-  ManagerDocumentsDocumentsIdRoute: ManagerDocumentsDocumentsIdRoute,
+  UsersIndexRoute: UsersIndexRoute,
+  UsersEditUserIdRoute: UsersEditUserIdRoute,
+  UsersUserAddIndexRoute: UsersUserAddIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
