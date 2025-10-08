@@ -1,6 +1,6 @@
 import { Layout, Grid, Button, Drawer } from "antd";
 import styles from "./Sidebar.module.scss";
-import { SidebarNavigation } from "../../SidebarNavigation";
+import { SidebarNavigation } from "../../../SidebarNavigation";
 import { useState } from "react";
 import { MenuOutlined } from "@ant-design/icons";
 

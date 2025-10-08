@@ -1,7 +1,7 @@
 import { ErrorBoundary } from "react-error-boundary";
 import { MainContent } from "./MainContent/MainContent";
 import styles from "./Layout.module.scss";
-import { Fallback } from "../../shared/ui/ErrorFallback/ErrorFallback";
+import { Fallback } from "../../../shared/ui/ErrorFallback/ErrorFallback";
 import { Sidebar } from "./Sidebar/Sidebar";
 
 export const Layout = () => {
